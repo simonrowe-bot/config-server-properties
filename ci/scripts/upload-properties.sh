@@ -1,4 +1,8 @@
 #!/bin/bash
+echo 'Contents of directory are:'
+ls
+pwd
+
 for file in *.properties;
 do
   echo "uploading file $file"

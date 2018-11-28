@@ -1,7 +1,7 @@
 #!/bin/bash
 echo 'Contents of directory are:'
+cd git-repo
 ls
-pwd
 
 for file in *.properties;
 do

@@ -1,7 +1,6 @@
 #!/bin/bash
 echo 'Contents of directory are:'
 cd git-repo
-ls
 
 for file in *.properties;
 do

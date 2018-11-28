@@ -1,0 +1,19 @@
+jobs:
+  - name: upload-properties
+    plan:
+    - get: git-repo
+      trigger: true
+    - task: upload
+      file: git-repo/ci/tasks/upload-properties.yml
+      params:
+        CONFIG_SERVER_USERNAME: {{CONFIG_SERVER_USERNAME}}
+        CONFIG_SERVER_PASSWORD: {{CONFIG_SERVER_PASSWORD}}
+        CONFIG_SERVER_URI: {{CONFIG_SERVER_URI}}  
+
+resources:
+- name: git-repo
+  type: git
+  source:
+    uri: {{GIT_REPO}}
+    branch: master
+    private_key: {{GIT_PRIVATE_KEY}}
